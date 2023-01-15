@@ -37,8 +37,7 @@ app.get('/login', (req, res) => {
 	const state = generateRandomString(16);
 	res.cookie(stateKey, state);
 
-	const scope =
-		'playlist-read-private playlist-modify-private playlist-modify-public';
+	const scope = 'playlist-read-private playlist-modify-private';
 
 	const queryParams = querystring.stringify({
 		client_id: CLIENT_ID,

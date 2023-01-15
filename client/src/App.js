@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { accessToken, logout } from './spotify';
 import Playlists from './playlists';
 import { Button } from 'react-bootstrap';
+import { FaGithub } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -311,6 +312,22 @@ function App() {
 						)}
 					</div>
 				)}
+				<FaGithub
+					onClick={() =>
+						window.open(
+							'https://github.com/AidenStickney/spotify-playlist-cleanser'
+						)
+					}
+					style={{
+						position: 'absolute',
+						bottom: '0',
+						right: '0',
+						height: '3vh',
+						width: '3vh',
+						margin: '1.1vh',
+						cursor: 'pointer',
+					}}
+				/>
 			</header>
 		</div>
 	);

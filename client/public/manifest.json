@@ -1,6 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Spotify Playlist Cleanser",
+  "name": "Spotify Playlist Cleanser",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "225x225"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

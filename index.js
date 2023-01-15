@@ -48,7 +48,7 @@ app.get('/login', (req, res) => {
 		scope: scope,
 	});
 
-	res.redirect(`${FRONTEND_URI}/?${queryParams}`);
+	res.redirect(`https://accounts.spotify.com/authorize?${queryParams}`);
 });
 
 app.get('/callback', (req, res) => {
@@ -79,7 +79,7 @@ app.get('/callback', (req, res) => {
 					expires_in,
 				});
 
-				res.redirect(`http://localhost:3000/?${queryParams}`);
+				res.redirect(`${FRONTEND_URI}/?${queryParams}`);
 			} else {
 				res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
 			}
@@ -114,7 +114,6 @@ app.get('/refresh_token', (req, res) => {
 		});
 });
 
-// All remaining requests return the React app, so it can handle routing.
 app.get('*', (req, res) => {
 	res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });

@@ -10,11 +10,11 @@ const REDIRECT_URI = process.env.REDIRECT_URI;
 const FRONTEND_URI = process.env.FRONTEND_URI;
 const PORT = process.env.PORT || 8888;
 
-// Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, './client/build')));
-
 const app = express();
 const port = 8888;
+
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 app.get('/', (req, res) => {
 	res.json('');

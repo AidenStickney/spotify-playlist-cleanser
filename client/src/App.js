@@ -24,6 +24,11 @@ function App() {
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	};
 
+	const LOGIN_URI =
+		process.env.NODE_ENV !== 'production'
+			? 'http://localhost:8888/login'
+			: 'https://spotify-playlist-cleanser.herokuapp.com/login';
+
 	const activateCleansing = () => {
 		setCleansing(true);
 		createPlaylist();
@@ -235,7 +240,7 @@ function App() {
 						<Button
 							variant="success"
 							size="lg"
-							href="http://localhost:8888/login"
+							href={LOGIN_URI}
 							style={{ margin: 'auto' }}
 						>
 							Log in to Spotify

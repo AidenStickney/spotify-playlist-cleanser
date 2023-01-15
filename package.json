@@ -7,7 +7,9 @@
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "server": "nodemon index.js",
     "client": "cd client && npm start",
-    "postinstall": "cd client && npm install"
+    "postinstall": "cd client && npm install",
+    "build": "NODE_ENV=production cd client/ && npm install && npm run build",
+    "start-server": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "heroku": "^7.67.1",
     "query-string": "^7.1.1",
     "react-bootstrap": "^2.7.0",
     "url-search-params": "^1.1.0"
@@ -25,6 +28,7 @@
   "devDependencies": {
     "concurrently": "^7.3.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.19"
   }
 }
